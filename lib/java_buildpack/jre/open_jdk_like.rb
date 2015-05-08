@@ -29,6 +29,7 @@ module JavaBuildpack
 
       # (see JavaBuildpack::Component::ModularComponent#command)
       def command
+        @sub_components.find { |candidate| candidate.is_a? OpenJDKLikeMemoryCalculator }.memory_calculation_command
       end
 
       # (see JavaBuildpack::Component::ModularComponent#sub_components)
